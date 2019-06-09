@@ -4,34 +4,75 @@ body {
 }
 
 .card {
-  background-color: rgba(213, 255, 220, 0.95);
+  display: flex;
+  flex-direction: column;
   border-radius: 20px;
+  background: #0e4f1f;
   border: 2px solid rgba(14, 79, 31, 0.95);
   padding: 20px;
 }
+.color-change-2x {
+	-webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 2s linear infinite alternate both;
+}
+
+ @-webkit-keyframes color-change-2x {
+  0% {
+    background: #19dcea;
+  }
+  100% {
+    background: #b22cff;
+  }
+}
+@keyframes color-change-2x {
+  0% {
+    background: #19dcea;
+  }
+  100% {
+    background: #b22cff;
+  }
+}
+
+
 
 .card-profile-picture {
   border-radius: 50%;
   width: 30%;
+  height: 30%;
   border: 4px solid rgba(14, 79, 31, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-profile{
+  display: flex;
+
+}
+.card-profile-biography{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 30px;
 }
 
 .card-profile-name {
   font-size: 50px;
-  display: inline-block;
+  display: in;
 }
 
 .card-profile-description {
   font-size: 35px;
-  display: inline-block;
+  display:flex;
 }
 
 .card-hobbies {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.3);
   padding: 10px;
   border-radius: 10px;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
   text-align: center;
+  
 }
 
 .card-hobbies-title {
@@ -40,14 +81,52 @@ body {
 }
 
 .card-hobbies-container {
-  display: block;
+  display: flex;
+  flex-direction: row;
   margin: 10px 0;
+  justify-content: space-around;
 }
 
 .card-hobbies-hobby {
-  background-color: #0e4f1f;
+  background-color: rgba(38, 135, 255, 0.6);
   color: white;
   padding: 5px;
   font-family: 'Anton', sans-serif;
   font-size: 20px;
+}
+
+@media all and (max-width: 400px){
+  .card{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+  .card-profile-picture{
+    width: 160px;
+    height: 160px;
+  }
+  .card-profile-description{
+    font-size:25px;
+    text-align: center;
+  }
+  .card-profile-name{
+    font-size:30px;
+    text-align: center;
+  }
+
+  .card-hobbies .card-hobbies-container{
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  .card-hobbies-hobby{
+    margin-top: 10px;
+  }
+
 }
